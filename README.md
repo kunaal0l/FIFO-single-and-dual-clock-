@@ -73,8 +73,50 @@ A synchronous FIFO (First In, First Out) buffer implementation in Verilog with b
 - **Flag Update**: Combinational (same cycle)
 - **Counter Update**: 1 clock cycle
 
+## Verification Considerations
+
+When testing this FIFO, verify:
+1. Correct write/read pointer management
+2. Accurate counter tracking
+3. Proper flag generation
+4. Error condition detection
+5. Reset functionality
+6. Simultaneous read/write operations
+
+## Design Diagrams
+
+### Block Diagram
+The following diagram shows the high-level block representation of the FIFO module:
+
+![FIFO Block Diagram](block_diagram.png)
+
+*Figure 1: FIFO module block diagram showing input/output interface*
+
+### RTL Schematic
+The elaborated RTL schematic shows the internal implementation details:
+
+![FIFO RTL Schematic](rtl_schematic.png)
+
+*Figure 2: Elaborated RTL schematic showing internal logic implementation with registers, multiplexers, and control logic*
+
+The RTL schematic reveals:
+- **Memory Array**: 64x8-bit register array for data storage
+- **Pointer Logic**: 7-bit read and write pointer registers with increment logic
+- **Counter Logic**: 8-bit counter with increment/decrement control
+- **Flag Generation**: Combinational logic for empty, full, and threshold flags
+- **Control Logic**: Write/read enable gating and error detection
+
+## Simulation Results
+
+The following waveform shows the functional verification of the FIFO module:
+
+![FIFO Simulation Waveform](simulation_waveform.png)
+
+*Figure 3: Simulation waveform showing FIFO operation over 550ns*
+
+
 
 
 ## Contributing
 
-Contributions are welcome! contact kunalgaurav0986@gmail.com for updation and clarification.
+Contributions are welcome! Please ensure all changes are properly tested and documented.
